@@ -71,7 +71,7 @@ with duckdb.connect(database=db_file) as conn:
     select id, latitude, longitude
     from {input_table} t1
     where not exists (select 1 from 
-    earthquake_township t2
+    {output_table} t2
     where t2.earthquake_id = t1.id) 
     '''
 
