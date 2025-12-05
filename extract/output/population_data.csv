@@ -1,0 +1,413 @@
+region,township,total_population,male_population,female_population
+01_kachin,Myitkyinar,Total,Male,Female
+01_kachin,Waingmaw,Total,Male,Female
+01_kachin,Ingyanyan,Total,Male,Female
+01_kachin,Tanaing,Total,Male,Female
+01_kachin,Chiphwe,Total,Male,Female
+01_kachin,Hsotlaw,Total,Male,Female
+01_kachin,Hsinbo(Sub-Tsp),Total,Male,Female
+01_kachin,Hsadone(Sub-Tsp),Total,Male,Female
+01_kachin,Kanpaikti(Sub-Tsp),Total,Male,Female
+01_kachin,Shinbwanyyan(Sub-Tsp),Total,Male,Female
+01_kachin,Panwa(Sub-Tsp),Total,Male,Female
+01_kachin,Mohnyin,Total,Male,Female
+01_kachin,Mogaung,Total,Male,Female
+01_kachin,Phakant,Total,Male,Female
+01_kachin,Hopin(Sub-Tsp),Total,Male,Female
+01_kachin,Kamine(Sub-Tsp),Total,Male,Female
+01_kachin,Bhamo,Total,Male,Female
+01_kachin,Shwegu,Total,Male,Female
+01_kachin,Momauk,Total,Male,Female
+01_kachin,Mansi,Total,Male,Female
+01_kachin,Myohla(Sub-Tsp),Total,Male,Female
+01_kachin, Lwe`ge`(Sub-Tsp),Total,Male,Female
+01_kachin, Dotphoneyan(Sub-Tsp),Total,Male,Female
+01_kachin,Putao,Total,Male,Female
+01_kachin,Sumprabum,Total,Male,Female
+01_kachin,Machanbaw,Total,Male,Female
+01_kachin,Khaunglanphoo,Total,Male,Female
+01_kachin,Naungmoon,Total,Male,Female
+01_kachin,Pannandin(Sub-Tsp),Total,Male,Female
+02_kayah,Loikaw,Total,Male,Female
+02_kayah,Dimawso,Total,Male,Female
+02_kayah, Phruso,Total,Male,Female
+02_kayah,Shardaw,Total,Male,Female
+02_kayah, Bawlakhe,Total,Male,Female
+02_kayah, Parsaung,Total,Male,Female
+02_kayah,Meisi,Total,Male,Female
+02_kayah,Ywathit(Sub-Tsp),Total,Male,Female
+03_kayin,Hpa-an,Total,Male,Female
+03_kayin,Hlaingbwe,Total,Male,Female
+03_kayin,Thandaunggyi,Total,Male,Female
+03_kayin,Paingkyon Sub-Tsb,Total,Male,Female
+03_kayin,Shan Ywathit(Sub-Tsb),Total,Male,Female
+03_kayin,Leiktho (Sub-Tsb),Total,Male,Female
+03_kayin,Bawgali(Sub-TsB),Total,Male,Female
+03_kayin,Pharpon,Total,Male,Female
+03_kayin,Kamamaung(Sub-Tsb),Total,Male,Female
+03_kayin,Myawady,Total,Male,Female
+03_kayin,Sugali(Sub-Tsp),Total,Male,Female
+03_kayin,  Wawlaymyaing(Sub-Tsp),Total,Male,Female
+03_kayin,Kawkareik,Total,Male,Female
+03_kayin,Kyarinseikkyi,Total,Male,Female
+03_kayin, Payarthonezu(Sub-Tsp),Total,Male,Female
+03_kayin,Kyaidon(S),Total,Male,Female
+04._chin_eng,Haka,Population,,
+04._chin_eng,Thantlang,Population,,
+04._chin_eng,Falam,Population,,
+04._chin_eng,Tedim,Population,,
+04._chin_eng,Tonzaung,Population,,
+04._chin_eng,Rihkhuadal(S),Population,,
+04._chin_eng,Cikha(S),Ward/Village Tract,Population,
+04._chin_eng,Mindat,Ward/Village Tract,Population,
+04._chin_eng,Matupi,Population,,
+04._chin_eng,Kanpalet,Population,,
+04._chin_eng,Paletwa,Population,,
+04._chin_eng,Reazu(S),Population,,
+04._chin_eng,Sami(S),Total,Male,Female
+05_sagaing,Sagaing,Ward/Village Tract,Population,
+05_sagaing,Myinmu,Population,,
+05_sagaing,Myaung,Population,,
+05_sagaing,Shwebo,Population,,
+05_sagaing,KhinU,Population,,
+05_sagaing,Wetlet,Population,,
+05_sagaing,Kambalu,Population,,
+05_sagaing,Kunhla,Population,,
+05_sagaing,Ye U,Population,,
+05_sagaing,Depayin,Population,,
+05_sagaing,Tasei,Population,,
+05_sagaing,Kyaukmyaung,Population,,
+05_sagaing,Momnywa,Population,,
+05_sagaing,Butalin,Population,,
+05_sagaing,Ayartaw,Population,,
+05_sagaing,Chaung Oo,Population,,
+05_sagaing,Katha,Population,,
+05_sagaing,Indaw,Population,,
+05_sagaing,Tigyaing,Population,,
+05_sagaing,Banmauk,Population,,
+05_sagaing,Kawlin,Population,,
+05_sagaing,Wuntho,Population,,
+05_sagaing,Pinlebu,Population,,
+05_sagaing,Kalay,Population,,
+05_sagaing,Kalewa,Population,,
+05_sagaing,Mingin,Population,,
+05_sagaing,Tamu,Population,,
+05_sagaing,Myothit(S),Population,,
+05_sagaing,Khampat(S),Population,,
+05_sagaing,Mawlaik,Population,,
+05_sagaing,Phaungpyin,Population,,
+05_sagaing,Hkamti,Population,,
+05_sagaing,Homalin,Population,,
+05_sagaing,Leshi,Population,,
+05_sagaing,Lahe,Population,,
+05_sagaing,Nanyun,Population,,
+05_sagaing,Mobaingluk(S),Population,,
+05_sagaing,Sonemara(S),Population,,
+05_sagaing,Htanparkway(S),Population,,
+05_sagaing,Pansaung(S),Population,,
+05_sagaing,Donhee(S),Population,,
+05_sagaing,Yin MarPin,Population,,
+05_sagaing,Salingyi,Population,,
+05_sagaing,Palae,Population,,
+05_sagaing,Kani,Population,,
+06_tanintharyi, Dawei,Total,Male,Female
+06_tanintharyi, Lounglon,Total,Male,Female
+06_tanintharyi,Thayetchaung,Total,Male,Female
+06_tanintharyi,Yebyu,Total,Male,Female
+06_tanintharyi,Myitta(Sub-Tsp),Total,Male,Female
+06_tanintharyi, Kaleinaung(Sub-Tsp),Total,Male,Female
+06_tanintharyi, Myeik,Total,Male,Female
+06_tanintharyi,Kyunsu,Total,Male,Female
+06_tanintharyi,Palaw,Total,Male,Female
+06_tanintharyi,Tanintharyi,Total,Male,Female
+06_tanintharyi, Palauk(Sub-Tsp),Total,Male,Female
+06_tanintharyi,Kawthoung,Total,Male,Female
+06_tanintharyi,Bokepyin,Total,Male,Female
+06_tanintharyi, Khamaukkyi(Sub-Tsp),Total,Male,Female
+06_tanintharyi,Pyigyimandaing(Sub-Tsp),Total,Male,Female
+06_tanintharyi,Karathuri(Sub-Tsp),Total,Male,Female
+07_bago_0, Bago,Total,Male,Female
+07_bago_0,Tanatpin,Total,Male,Female
+07_bago_0,Kawa,Total,Male,Female
+07_bago_0,Waw,Total,Male,Female
+07_bago_0,Nyaunglebin,Total,Male,Female
+07_bago_0,Kyauktaga,Total,Male,Female
+07_bago_0,Daik U,Total,Male,Female
+07_bago_0,Shwegyin,Population,,
+07_bago_0,Toungoo,Population,,
+07_bago_0,Yaedashe,Total,Male,Female
+07_bago_0, Kyaukkyi,Total,Male,Female
+07_bago_0, Pyu,Total,Male,Female
+07_bago_0,Oatwin,Total,Male,Female
+07_bago_0,Htantapin,Total,Male,Female
+07_bago_0,Pyay,Total,Male,Female
+07_bago_0,Paukkhaung,Total,Male,Female
+07_bago_0, Padaung,Total,Male,Female
+07_bago_0,Paunde,Total,Male,Female
+07_bago_0,Thegon,Total,Male,Female
+07_bago_0,Shwedaung,Total,Male,Female
+07_bago_0,Thayawady,Total,Male,Female
+07_bago_0,Letpadan,Total,Male,Female
+07_bago_0,Minhla,Total,Male,Female
+07_bago_0,Okpo,Total,Male,Female
+07_bago_0,Zigon,Total,Male,Female
+07_bago_0,Nattalin,Total,Male,Female
+07_bago_0,Monyo,Total,Male,Female
+07_bago_0,Gyobingauk,Total,Male,Female
+08_magway, Magway,Total,Male,Female
+08_magway,Yenangyoung,Total,Male,Female
+08_magway,Chauk,Total,Male,Female
+08_magway, Taungdwingyi,Total,Male,Female
+08_magway, Myothit,Total,Male,Female
+08_magway,Natmauk,Total,Male,Female
+08_magway,Minbu,Total,Male,Female
+08_magway, Pwint Phyu,Total,Male,Female
+08_magway, Ngape,Total,Male,Female
+08_magway,Salin,Total,Male,Female
+08_magway,Saytottara,Total,Male,Female
+08_magway,Thayet,Total,Male,Female
+08_magway,Minhla,Total,Male,Female
+08_magway,Mindon,Total,Male,Female
+08_magway,Kamma,Total,Male,Female
+08_magway,Aunglan,Total,Male,Female
+08_magway,Sinpaungwe`,Total,Male,Female
+08_magway,Pakokku,Total,Male,Female
+08_magway,Yesagyo,Total,Male,Female
+08_magway,Myaing,Total,Male,Female
+08_magway,Pauk,Total,Male,Female
+08_magway,Seikphyu,Total,Male,Female
+08_magway,Gangaw,Total,Male,Female
+08_magway,Htilin,Total,Male,Female
+08_magway,Saw,Total,Male,Female
+08_magway,Kyaukhtu(Sub-Tsp),Total,Male,Female
+09_mandalay_update,Aungmyetherzan,Total,Male,Female
+09_mandalay_update,Chanayetharzan,Total,Male,Female
+09_mandalay_update,Mahaaungmye,Total,Male,Female
+09_mandalay_update,Chanmyatharzi,Total,Male,Female
+09_mandalay_update,Pyigyidagun,Total,Male,Female
+09_mandalay_update,Amarapura,Total,Male,Female
+09_mandalay_update,Patheingyi,Total,Male,Female
+09_mandalay_update,pyinoolwin,Total,Male,Female
+09_mandalay_update,Madaya,Total,Male,Female
+09_mandalay_update,Sinku,Total,Male,Female
+09_mandalay_update,Mogok,Total,Male,Female
+09_mandalay_update,tabeikkyin,Total,Male,Female
+09_mandalay_update,        Tagaung(Sub-Tsp),Total,Male,Female
+09_mandalay_update,kyaukse,Total,Male,Female
+09_mandalay_update,singaing,Total,Male,Female
+09_mandalay_update,myitthar,Total,Male,Female
+09_mandalay_update,Tada U,Total,Male,Female
+09_mandalay_update,Myingyan,Total,Male,Female
+09_mandalay_update,Taungtha,Total,Male,Female
+09_mandalay_update,natogyi,Total,Male,Female
+09_mandalay_update,Kyaukpadaung,Total,Male,Female
+09_mandalay_update, Ngazun,Total,Male,Female
+09_mandalay_update,Nyaung U,Total,Male,Female
+09_mandalay_update, Ngathayauk(Sub-Tsp),Total,Male,Female
+09_mandalay_update, Yame`thin,Total,Male,Female
+09_mandalay_update,  Pyawbwe,Total,Male,Female
+09_mandalay_update,Meiktila,Total,Male,Female
+09_mandalay_update, Mahlaing,Total,Male,Female
+09_mandalay_update, Thazi,Total,Male,Female
+09_mandalay_update,Wundwin,Total,Male,Female
+10_mon,Mawlamyine,289388,139026,150362
+10_mon,  Kyaikemaraw,195810,92746,103064
+10_mon,Chaungzon,122126,55596,66530
+10_mon,Thanbyuzayat,170536,81449,89087
+10_mon,Mudon,190737,89976,100761
+10_mon,Ye,152485,76089,76396
+10_mon,Lamine(Sub-Tsp),88476,41634,46842
+10_mon,Khawzar(Sub-Tsp),22663,11160,11503
+10_mon,  Thaton,238106,116394,121712
+10_mon,Paung,218459,105371,113088
+10_mon,Kyaikto,184532,90031,94501
+10_mon,Bilin,181075,87920,93155
+11_rakhine,Sittway,Total,Male,Female
+11_rakhine,Ponnagyun,Total,Male,Female
+11_rakhine,Pauktaw,Total,Male,Female
+11_rakhine,Yathedaung,Total,Male,Female
+11_rakhine,Mauk U,Total,Male,Female
+11_rakhine,Kyauktaw,Total,Male,Female
+11_rakhine,Minbya,Total,Male,Female
+11_rakhine,Myebon,Total,Male,Female
+11_rakhine,Maungtaw,Total,Male,Female
+11_rakhine,Buthidaung,Total,Male,Female
+11_rakhine,Taungpyolatwe(Sub-Tsp),Total,Male,Female
+11_rakhine,Kyaukpyu,Total,Male,Female
+11_rakhine,Mannaung,Total,Male,Female
+11_rakhine,Yanbye,Total,Male,Female
+11_rakhine,An,Total,Male,Female
+11_rakhine,Thandwe,Total,Male,Female
+11_rakhine,Taungup,Population,,
+11_rakhine,Gwa,Total,Male,Female
+11_rakhine,Maei(Sub-Tsp),Total,Male,Female
+11_rakhine,Kyeintali(Sub-Tsp),Total,Male,Female
+12_yangon, Insein,305283,146158,159125
+12_yangon,Mingaladon ,331586,158259,173327
+12_yangon,Hmawby ,244607,120931,123676
+12_yangon,Hlegu ,270741,134087,136654
+12_yangon,Taikkyi ,277268,134714,142554
+12_yangon,Htantabin ,145792,71807,73985
+12_yangon,Shwepyitha ,343526,164264,179262
+12_yangon,Hlinethaya,687867,322862,365005
+12_yangon,Thingangyun,209486,98698,110788
+12_yangon, Yankin,70946,32724,38222
+12_yangon, South Okkalapa,161126,75547,85579
+12_yangon, North Okkalapa,333293,156340,176953
+12_yangon,Thakayta,220556,107290,113266
+12_yangon,Dawbon,75325,36745,38580
+12_yangon,Tamwe,165313,74662,90651
+12_yangon,Pazuntaung,48455,22131,26324
+12_yangon,Botahtaung,40995,19416,21579
+12_yangon,Dagon Myothit(South),371646,181140,190506
+12_yangon, Dagon Myothit(North),203948,96388,107560
+12_yangon,Dagon Myothit(East),165628,80861,84767
+12_yangon,Dagon Myothit(Seikkan) ,167448,82697,84751
+12_yangon,Mingala Taungnyunt ,132494,62530,69964
+12_yangon,Thanlyin ,268063,130537,137526
+12_yangon,Kyauktan ,132765,64378,68387
+12_yangon,Thongwa ,157876,75492,82384
+12_yangon,Khayan ,158019,75510,82509
+12_yangon,Twantay,226836,111251,115585
+12_yangon,Kawhmu ,119050,58299,60751
+12_yangon,Kungyangon ,111632,54107,57525
+12_yangon,Dala ,172857,84671,88186
+12_yangon,Seikkyi- Khanaungto ,34003,17068,16935
+12_yangon,Cocogyun ,1940,1294,646
+12_yangon,Tada (Sub- Tsp),34683,17078,17605
+12_yangon,Kyauktada ,29853,13777,16076
+12_yangon,Pabedan ,33336,15171,18165
+12_yangon,Lanmadaw ,47160,20180,26980
+12_yangon,Latha ,25057,10728,14329
+12_yangon,Ahlon ,55482,25551,29931
+12_yangon,Kyimyindine ,111514,52627,58887
+12_yangon,Sangyoung ,99619,43993,55626
+12_yangon,Hline ,160307,75029,85278
+12_yangon,Kamayut ,84569,36958,47611
+12_yangon,Mayangon ,198113,93392,104721
+12_yangon,Dagon ,25082,11846,13236
+12_yangon,Bahan ,96732,45518,51214
+12_yangon,Seikkan ,2826,1697,1129
+13_shan_without_hopan_and_makman_district_1,Taunggyi,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1, Nyaungshwe,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Hopong,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Hsihseng,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kalaw,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Pindaya,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Ywangan,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Yatsauk,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Pinlaung,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Phekon,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kyauktalongyi (Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Indaw (Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Naungtayar (Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Loilem,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Lahecha,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Nanhsam(South),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kunhing,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kehsi,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Mongkai,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Mineshu,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Panglong (Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kholan(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Karli(sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minenaung(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minesan(Monsan)(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Mone,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Maukme,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minepan,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Homane (Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kengtaung(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Lashio,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Theinni,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Mineye,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Tantyan,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Muse,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Namkham,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kukai,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Monekoe(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Manhero (Manhyo)(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Pansai (Kyu Kok) (Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Tamoenye (Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kyaukme,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1, Naungkhio,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Hsipaw,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Namtu,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Namsan (North),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Momeik,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Mabane,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Manton,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minengaw(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minelon(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kunlon,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Laukine,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kongyan,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Chinshwehaw(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Mawhtike (Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Hopan,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minemaw,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Panwine,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Panlon(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Makman,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Pan San(Pan Kham),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Naphang,116180,59369,56811
+13_shan_without_hopan_and_makman_district_1,ManKan(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kengtung,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minekat,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Mineyan,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minelar,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minw Pauk(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minesat,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minepyin,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minetung,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minekoke(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Tontar (Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Ponparkyin(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Monehta (Subn-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Tachileik,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Talay (Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Kenglat(Sub-Tsp),Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Minephyat,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Mineyaung,Total,Male,Female
+13_shan_without_hopan_and_makman_district_1,Mineyu(Sub-Tsp),Total,Male,Female
+14_ayeyawady,Kangyidaunt,Total,Male,Female
+14_ayeyawady,Kyaungon,Total,Male,Female
+14_ayeyawady,Kyonpyaw,Total,Male,Female
+14_ayeyawady,Ngaputaw,Total,Male,Female
+14_ayeyawady,Pathein,Total,Male,Female
+14_ayeyawady,Yekyi,Total,Male,Female
+14_ayeyawady,Thapaung,Total,Male,Female
+14_ayeyawady,Ngayokaung(Sub-Tsp),Total,Male,Female
+14_ayeyawady,Hainggyikyun(Sub-Tsp),Total,Male,Female
+14_ayeyawady,Shwethaungyan(Sub-Tsp),Total,Male,Female
+14_ayeyawady,Ngwehsaung(Sub-Tsp),Total,Male,Female
+14_ayeyawady,Ngathaingchaung(Sub-Tsp),Total,Male,Female
+14_ayeyawady,Kyaiklatt,Total,Male,Female
+14_ayeyawady,Daydaye,Total,Male,Female
+14_ayeyawady,Phyapon,Total,Male,Female
+14_ayeyawady,Bogale,Total,Male,Female
+14_ayeyawady,Ahmar(Sub-Tsp),Total,Male,Female
+14_ayeyawady,Nyaungdon,Total,Male,Female
+14_ayeyawady,Danubyu,Total,Male,Female
+14_ayeyawady,Pantanaw,Total,Male,Female
+14_ayeyawady,Maubin,Total,Male,Female
+14_ayeyawady,Myaungmya,Total,Male,Female
+14_ayeyawady,Wakema,Total,Male,Female
+14_ayeyawady,Einme,Total,Male,Female
+14_ayeyawady,Mawlaminegyun,Total,Male,Female
+14_ayeyawady,Labutta,Total,Male,Female
+14_ayeyawady,Pyinsalu(Sub-Tsp),Total,Male,Female
+14_ayeyawady,Kyangin,Total,Male,Female
+14_ayeyawady,Zalun,Total,Male,Female
+14_ayeyawady,Myanaung,Total,Male,Female
+14_ayeyawady,Laymyethna,Total,Male,Female
+14_ayeyawady,Hinthada,Total,Male,Female
+14_ayeyawady,Ingapu,Total,Male,Female
+15_naypyitaw,Tatkon,Total,Male,Female
+15_naypyitaw,Zeyarthiri,Total,Male,Female
+15_naypyitaw,Ottarathiri,Total,Male,Female
+15_naypyitaw,Pobbathiri,Total,Male,Female
+15_naypyitaw,Pyinmana,Total,Male,Female
+15_naypyitaw,Lewe,Total,Male,Female
+15_naypyitaw,Zebuthiri,Total,Male,Female
+15_naypyitaw,Dekkhinathiri,Total,Male,Female
