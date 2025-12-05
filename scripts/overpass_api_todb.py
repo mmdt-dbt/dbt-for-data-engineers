@@ -39,17 +39,6 @@ COUNTRY_ISO_CODE = "MM" # Use the ISO code for country
 db_file = 'risk_analytics_mm.duckdb'
 table_name = 'mm_infrastructure'
 
-# %%
-with duckdb.connect(database=db_file) as conn:
-    conn.execute(f'''
-        CREATE TABLE IF NOT EXISTS {table_name} (
-            id BIGINT PRIMARY KEY,
-            amenity VARCHAR,
-            name VARCHAR,
-            latitude DOUBLE,
-            longitude DOUBLE
-        )
-    ''')
 # %% 
 query_hospital = f"""
 // default timeout is 180 seconds
@@ -89,10 +78,18 @@ hospital_df = fetch_overpass_data(OVERPASS_URL, payload1)
 time.sleep(10) 
 school_df = fetch_overpass_data(OVERPASS_URL, payload2)
 # %%
-with duckdb.connect(db_file) as conn:
+with duckdb.connect(database=db_file) as conn:
+    conn.execute(f'''
+        CREATE TABLE IF NOT EXISTS {table_name} (
+            id BIGINT PRIMARY KEY,
+            amenity VARCHAR,
+            name VARCHAR,
+            latitude DOUBLE,
+            longitude DOUBLE
+        )
+    ''')
     conn.register('df1_view', hospital_df)
     conn.execute(f"insert into {table_name} select * from df1_view ON CONFLICT (id) DO NOTHING")
     conn.register('df2_view', school_df)                
     conn.execute(f"insert into {table_name} select * from df2_view ON CONFLICT (id) DO NOTHING")
 
-# %% --- IGNORE ---
