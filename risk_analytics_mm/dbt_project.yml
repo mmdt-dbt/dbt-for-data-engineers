@@ -1,0 +1,30 @@
+name: "risk_analytics_mm"
+
+config-version: 2
+version: "0.1"
+
+profile: "risk_analytics_mm"
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+analysis-paths: ["analysis"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_modules"
+  - "logs"
+
+require-dbt-version: [">=1.0.0", "<2.0.0"]
+
+models:
+  risk_analytics_mm:
+    +materialized: table
+    staging:
+      +materialized: view
+      +docs:
+        node_color: "silver"
+    +docs:
+      node_color: "gold"

@@ -1,0 +1,7 @@
+risk_analytics_mm:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "risk_analytics_mm.duckdb"
+      threads: 24
