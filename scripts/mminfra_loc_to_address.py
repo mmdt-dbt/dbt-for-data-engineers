@@ -7,7 +7,7 @@ import pandas as pd
 
 db_file = 'risk_analytics_mm.duckdb'
 input_table = 'mm_infrastructure'
-output_table = 'mm_infra_township'
+output_table = 'infrastructure_township'
 
 nominatim_base_url = "https://nominatim.openstreetmap.org/reverse"
 output_format = 'json'
@@ -56,7 +56,7 @@ def get_reverse_geocode(lat, lon):
 with duckdb.connect(database=db_file) as conn:
     conn.execute(f'''
                  CREATE TABLE IF NOT EXISTS {output_table} (
-                 infra_id VARCHAR PRIMARY KEY, 
+                 infra_id BIGINT PRIMARY KEY, 
                  latitude DOUBLE, 
                  longitude DOUBLE,
                  township VARCHAR)
