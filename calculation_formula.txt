@@ -1,0 +1,29 @@
+Hazard = 0.50 * Magnitude_Score + 0.30 * Depth_Score+ 0.20 * Frequency_Score
+Hazard scaling:
+Magnitude_Score = normalize(magnitude, 0–10)
+Depth_Score = 1 - normalize(depth_km, 0–700)(shallower earthquakes = higher hazard)
+Frequency_Score = normalize(earthquakes_per_township)
+
+Exposure  = 0.60 * Population_Score + 0.40 * Infrastructure_Score
+Exposure scaling:
+Population_Score = normalize(population per township)
+Infrastructure_Score = normalize(count of infra_id per township)
+
+Vulnerability = 0.40 * PopDensity_Score + 0.30 * InfraDensity_Score + 0.30 * CriticalInfraRatio_Score
+Vulnerability scaling:
+PopDensity_Score = normalize(population / township_area)
+InfraDensity_Score = normalize(infrastructure_count / township_area)
+CriticalInfraRatio = critical_infra / total_infra (hospitals, power, telecom, schools, etc.)
+
+Earthquake Risk Index(ERI):
+ERI = 0.40 * Hazard + 0.40 * Exposure + 0.20 * Vulnerability
+Normalize ERI into 0–100 scale:
+ERI_Score = normalize(ERI) * 100
+
+ERI Score per township
+ERI Score	Risk Level	Description
+80–100		Extreme		High population + critical infrastructure + strong earthquakes
+60–80		High		Densely populated or many infrastructures
+40–60		Moderate	Some activity, medium exposure
+20–40		Low		Low population or low earthquake frequency
+0–20		Minimal		No recent significant earthquakes
