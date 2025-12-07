@@ -24,6 +24,7 @@ models:
     +materialized: table
     staging:
       +materialized: view
+      +tags : ['staging', 'stg']
       +docs:
         node_color: "silver"
     +docs:

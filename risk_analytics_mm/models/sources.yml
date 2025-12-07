@@ -1,0 +1,7 @@
+sources:
+  - name: risk_analytics_mm
+    schema: main
+    tables:
+      - name: township_summary_updated
+      - name: infrastructure_township
+      - name: earthquake_township
