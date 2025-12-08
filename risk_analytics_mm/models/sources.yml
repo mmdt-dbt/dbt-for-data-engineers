@@ -5,3 +5,4 @@ sources:
       - name: township_summary_updated
       - name: infrastructure_township
       - name: earthquake_township
+      - name: population
