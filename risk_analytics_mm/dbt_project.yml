@@ -27,5 +27,8 @@ models:
       +tags : ['staging', 'stg']
       +docs:
         node_color: "silver"
+    intermediate:
+      +materialized: view
+      +tags : ['intermediate', 'int']
     +docs:
       node_color: "gold"
