@@ -9,11 +9,10 @@ Exposure scaling:
 Population_Score = normalize(population per township)
 Infrastructure_Score = normalize(count of infra_id per township)
 
-Vulnerability = 0.40 * PopDensity_Score + 0.30 * InfraDensity_Score + 0.30 * CriticalInfraRatio_Score
+Vulnerability = 0.60 * PopDensity_Score + 0.40 * InfraDensity_Score 
 Vulnerability scaling:
 PopDensity_Score = normalize(population / township_area)
 InfraDensity_Score = normalize(infrastructure_count / township_area)
-CriticalInfraRatio = critical_infra / total_infra (hospitals, power, telecom, schools, etc.)
 
 Earthquake Risk Index(ERI):
 ERI = 0.40 * Hazard + 0.40 * Exposure + 0.20 * Vulnerability
