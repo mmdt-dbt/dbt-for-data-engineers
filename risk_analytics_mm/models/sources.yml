@@ -7,3 +7,4 @@ sources:
       - name: earthquake_township
       - name: population
       - name: usgs_earthquakes
+      - name: mm_infrastructure

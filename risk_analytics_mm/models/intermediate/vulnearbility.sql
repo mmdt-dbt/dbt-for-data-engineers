@@ -1,0 +1,59 @@
+---------------------popdensity_score----------------------------
+WITH population AS (
+select Township_ID, max(Population) as population
+from  {{ ref('stg_population') }}
+group by Township_ID
+),
+join_pop_area AS (
+select a.township_code, a.township_name, a.area_km2 as area_km, b.population
+from {{ ref('stg_township_summary') }} a
+left join population b
+on a.township_code = b.Township_ID
+),
+pop_divide_area AS (
+select *, (population/area_km) as pop_by_area
+from join_pop_area
+where population is not null
+),
+normalize_popdensity AS (
+    SELECT
+        *,
+        -- Min-Max Normalization using Window Functions
+        nullif((pop_by_area - MIN(pop_by_area) OVER ()) / (MAX(pop_by_area) OVER () - MIN(pop_by_area) OVER ()), 0) AS pop_density
+    FROM
+        pop_divide_area
+),
+---------------infra_density-----------------
+infra_township_info AS (
+select a.id, a.amenity, b.township_code
+from 
+(select id, amenity from {{ ref('stg_mm_infrastructure') }}
+where amenity in ('school','university','hospital','clinic')
+) a
+left join {{ ref('infra_with_township') }} b
+on a.id = b.infra_id
+),
+join_township_area AS (
+select a.*, b.area_km2 as area_km
+from infra_township_info a 
+left join {{ ref('stg_township_summary') }}b
+on a.township_code = b.township_code
+),
+infra_count_per_townshiparea AS (
+select township_code, (count(*)/max(area_km)) as infracount_by_area
+from join_township_area
+group by township_code
+),
+normalize_infra_density AS (
+    select
+        *,
+        (infracount_by_area - min(infracount_by_area) OVER ()) / (max(infracount_by_area) OVER () - min(infracount_by_area) OVER ()) AS infra_density
+    from
+        infra_count_per_townshiparea
+        where infracount_by_area is not null
+)
+-------calculate vulnerability score---
+select a.township_code, a.pop_density , b.infra_density , (0.6 * a.pop_density + 0.4 * b.infra_density) as vulnerability_score
+from normalize_popdensity a
+inner join normalize_infra_density b
+on a.township_code = b.township_code
