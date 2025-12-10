@@ -10,27 +10,30 @@ WITH base AS(
 
 with_township AS (
     SELECT
-        *,
-        COUNT(*) OVER (PARTITION BY township_code) AS frequency
+        township_code, 
+        AVG(depth_km) AS depth_avg, 
+        AVG(magnitude) AS magnitude_avg,
+        COUNT(*) AS frequency
     FROM base
+    GROUP BY township_code
 ),
 
 normalized AS (
     SELECT
         township_code,
-        magnitude,
-        depth_km,
+        magnitude_avg,
+        depth_avg,
         frequency,
 
-        (magnitude - MIN(magnitude) OVER())
+        (magnitude_avg - MIN(magnitude_avg) OVER())
         /
-        NULLIF(MAX(magnitude) OVER() - MIN(magnitude) OVER(), 0)
+        NULLIF(MAX(magnitude_avg) OVER() - MIN(magnitude_avg) OVER(), 0)
         AS magnitude_norm,
 
         1 - (
-            (depth_km - MIN(depth_km) OVER())
+            (depth_avg - MIN(depth_avg) OVER())
             /
-            NULLIF(MAX(depth_km) OVER() - MIN(depth_km) OVER(), 0)
+            NULLIF(MAX(depth_avg) OVER() - MIN(depth_avg) OVER(), 0)
         ) AS depth_norm,
 
     
@@ -48,6 +51,6 @@ SELECT township_code,
         AS Hazard_score
 FROM normalized
 WHERE township_code IS NOT NULL
-)
+) 
 
 SELECT * FROM final
