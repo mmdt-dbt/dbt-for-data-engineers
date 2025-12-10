@@ -9,4 +9,7 @@ logs/
 .user.yml
 venv/
 env/
-
+*.duckdb
+*.duckdb.wal
+**/*.duckdb
+**/*.duckdb.wal

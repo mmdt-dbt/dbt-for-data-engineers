@@ -2,7 +2,7 @@
 with eri_calculation AS (
 select a.township_code, a.exposure_score, b.vulnerability_score, c.Hazard_score, 
 COALESCE(0.4 * c.Hazard_score, 0) + COALESCE(0.4 * a.exposure_score, 0) + COALESCE(0.2 * b.vulnerability_score, 0) as eri
-from {{ ref('exposure') }} a
+from {{ ref('exposure_score') }} a
 left join {{ ref('vulnerability') }} b
 on a.township_code = b.township_code
 left join {{ ref('hazard') }} c
