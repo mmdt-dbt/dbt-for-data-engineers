@@ -30,5 +30,8 @@ models:
     intermediate:
       +materialized: view
       +tags : ['intermediate', 'int']
+    marts:
+      +materialized: table
+      +tags : ['marts', 'mrt']
     +docs:
       node_color: "gold"
