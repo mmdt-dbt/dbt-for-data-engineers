@@ -98,9 +98,13 @@ with duckdb.connect(database=db_file) as conn:
                 'township': township
             })
     result_df = pd.DataFrame(rows)
-    conn.register('result_view', result_df)  
-    conn.execute(f'''
-        INSERT INTO {output_table}
-        SELECT * FROM result_view
-        ON CONFLICT (earthquake_id) DO NOTHING
-    ''')   
+
+    if result_df.empty:
+        print("No new records to insert.")
+    else:
+        conn.register('result_view', result_df)  
+        conn.execute(f'''
+            INSERT INTO {output_table}
+            SELECT * FROM result_view
+            ON CONFLICT (earthquake_id) DO NOTHING
+        ''')   
