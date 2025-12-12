@@ -35,23 +35,26 @@ for feature in geojson["features"]:
 
 df = pd.DataFrame(rows)
 
-with duckdb.connect(database=db_file) as conn:
-    conn.execute(
-        f"""
-        CREATE TABLE IF NOT EXISTS {table_name} (
-            id VARCHAR PRIMARY KEY,
-            title VARCHAR,
-            time BIGINT,
-            latitude DOUBLE,
-            longitude DOUBLE,
-            depth_km DOUBLE,
-            magnitude DOUBLE,
-            place VARCHAR,
-            detail VARCHAR
+if df.empty:
+        print("No new records to insert.")
+else:     
+    with duckdb.connect(database=db_file) as conn:
+        conn.execute(
+            f"""
+            CREATE TABLE IF NOT EXISTS {table_name} (
+                id VARCHAR PRIMARY KEY,
+                title VARCHAR,
+                time BIGINT,
+                latitude DOUBLE,
+                longitude DOUBLE,
+                depth_km DOUBLE,
+                magnitude DOUBLE,
+                place VARCHAR,
+                detail VARCHAR
+            )
+        """
         )
-    """
-    )
-    conn.register("df_view", df)
-    conn.execute(
-        f"insert into {table_name} select * from df_view ON CONFLICT (id) DO NOTHING"
-    )
+        conn.register("df_view", df)
+        conn.execute(
+            f"insert into {table_name} select * from df_view ON CONFLICT (id) DO NOTHING"
+        )

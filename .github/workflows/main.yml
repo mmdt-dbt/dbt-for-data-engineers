@@ -43,3 +43,9 @@ jobs:
           cd risk_analytics_mm
           dbt debug
           duckcli risk_analytics_mm.duckdb -e "select count(*) from usgs_earthquakes;"
+      - name: Push updated duckdb to repo
+        run: |
+          git config user.name "Github Actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add risk_analytics_mm.duckdb
+          git commit -m "GitHub Action: push updated duckdb" && git push || true
