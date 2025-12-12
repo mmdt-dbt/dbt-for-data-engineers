@@ -3,7 +3,7 @@ import duckdb
 import pandas as pd
 
 # In duckdb, default schema is 'main'
-db_file = "./risk_analytics_mm/risk_analytics_mm.duckdb"
+db_file = "../risk_analytics_mm/risk_analytics_mm.duckdb"
 table_name = "usgs_earthquakes"
 
 usgs_api_url = "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=NOW-1DAYS&minmagnitude=2.5&minlatitude=9.78&maxlatitude=28.62&minlongitude=92.08&maxlongitude=101.28"
