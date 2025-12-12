@@ -1,11 +1,10 @@
-# %%
 import requests
 import json
 import time
 import duckdb
 import pandas as pd
 
-db_file = 'risk_analytics_mm.duckdb'
+db_file = "risk_analytics_mm/risk_analytics_mm.duckdb"
 input_table = 'usgs_earthquakes'
 output_table = 'earthquake_township'
 
@@ -15,7 +14,6 @@ zoom = 12           # township level
 address_details = 1
 delay_seconds = 1.5 
 
-# %%
 def get_reverse_geocode(lat, lon):
     headers = {
      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -52,7 +50,6 @@ def get_reverse_geocode(lat, lon):
         print(f"JSON decode error at ({lat}, {lon})")
     return None
 
-# %%
 with duckdb.connect(database=db_file) as conn:
     conn.execute(f'''
                  CREATE TABLE IF NOT EXISTS {output_table} (
@@ -107,4 +104,3 @@ with duckdb.connect(database=db_file) as conn:
         SELECT * FROM result_view
         ON CONFLICT (earthquake_id) DO NOTHING
     ''')   
-# %%
