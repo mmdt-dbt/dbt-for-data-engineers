@@ -26,9 +26,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r risk_analytics_mm/requirements.txt
       - name: Run dbt debug
         run: |
           which dbt
           dbt --version
+          cd risk_analytics_mm
           dbt debug
