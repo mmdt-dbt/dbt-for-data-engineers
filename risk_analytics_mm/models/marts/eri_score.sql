@@ -9,7 +9,8 @@ left join {{ ref('hazard') }} c
 on a.township_code = c.township_code
 ),
 normalized_eri_score as (
-select township_code , ROUND((COALESCE((eri - MIN(eri) OVER ()) /NULLIF(MAX(eri) OVER () - MIN(eri) OVER (), 0),0)) * 100,2) AS eri_score
+select township_code, exposure_score, vulnerability_score, Hazard_score as hazard_score,
+ROUND((COALESCE((eri - MIN(eri) OVER ()) /NULLIF(MAX(eri) OVER () - MIN(eri) OVER (), 0),0)) * 100,2) AS eri_score
   from eri_calculation
 ),
 eri_lable as(
@@ -23,7 +24,8 @@ select *,
     END AS risk_level
 FROM normalized_eri_score
 )
-select a.township_code, b.township_name, a.eri_score, a.risk_level
+select a.township_code, b.township_name, b.latitude, b.longitude,
+ a.exposure_score, a.vulnerability_score, a.hazard_score, a.eri_score, a.risk_level
 from eri_lable a
 left join {{ ref('stg_township_summary') }} b
 on a.township_code = b.township_code
