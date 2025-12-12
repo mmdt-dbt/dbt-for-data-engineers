@@ -4,6 +4,7 @@
 #
 #    pip-compile
 #
+pandas==2.3.3
 agate==1.7.1
     # via
     #   dbt-adapters
