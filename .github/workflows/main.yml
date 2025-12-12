@@ -32,10 +32,10 @@ jobs:
           pip install -r risk_analytics_mm/requirements.txt
       - name: earthquake api to db
         run: |
-          python risk_analytics_mm/scripts/earthquake_api_todb.py
+          python scripts/earthquake_api_todb.py
       - name: location to address
         run: |
-          python risk_analytics_mm/scripts/earthquake_loc_to_address.py
+          python scripts/earthquake_loc_to_address.py
       - name: Run dbt debug
         run: |
           which dbt
