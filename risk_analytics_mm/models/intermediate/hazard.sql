@@ -1,5 +1,5 @@
 WITH base AS(
-    SELECT ET.earthquake_id,
+    SELECT UE.id as earthquake_id,
             depth_km,
             magnitude,
             ET.township_code
