@@ -1,0 +1,218 @@
+version: 2
+
+models:
+  - name: earthquake_with_township
+    description: |
+      Intermediate model that enriches earthquake data with township information.
+      Joins cleaned earthquake records with township summary data to add township
+      codes and standardized names.
+    columns:
+      - name: earthquake_id
+        description: Unique identifier for the earthquake event.
+        tests:
+          - not_null
+      - name: latitude
+        description: Geographic latitude coordinate of the earthquake location.
+        tests:
+          - not_null
+      - name: longitude
+        description: Geographic longitude coordinate of the earthquake location.
+        tests:
+          - not_null
+      - name: township
+        description: Cleaned township name from the staging layer.
+        tests:
+          - not_null
+      - name: township_name
+        description: Standardized township name from the township summary reference.
+      - name: township_code
+        description: Official township code identifier from the township summary reference.
+    meta:
+      materialization: view
+      depends_on:
+        - stg_earthquake_township
+        - stg_township_summary
+      join_type: left
+  - name: exposure_score
+    description: |
+      Intermediate model that calculates exposure risk scores for townships based on
+      population and infrastructure. Combines normalized population and infrastructure
+      metrics using a weighted formula (60% population, 40% infrastructure) to produce
+      a composite exposure score between 0 and 1.
+    columns:
+      - name: township_code
+        description: Official township code identifier.
+        tests:
+          - not_null
+          - unique
+      - name: pop_score
+        description: |
+          Normalized population score (0-1) based on township population relative to
+          min and max across all townships.
+        tests:
+          - not_null
+      - name: infra_score
+        description: |
+          Normalized infrastructure score (0-1) based on count of critical amenities
+          (schools, universities, hospitals, clinics) relative to min and max across
+          all townships.
+      - name: exposure_score
+        description: |
+          Composite exposure risk score (0-1) calculated as:
+          0.6 * pop_score + 0.4 * infra_score
+        tests:
+          - not_null
+    meta:
+      materialization: view
+      depends_on:
+        - stg_mm_infrastructure
+        - infra_with_township
+        - stg_population
+      calculation_method: weighted_normalization
+      weights:
+        population: 0.6
+        infrastructure: 0.4
+      amenities_included:
+        - school
+        - university
+        - hospital
+        - clinic
+  - name: exposure
+    description: |
+      Intermediate model that calculates exposure risk by combining normalized
+      population and infrastructure counts per township. Uses a weighted formula
+      (60% population, 40% infrastructure) to produce a composite exposure metric.
+    columns:
+      - name: township_code
+        description: Official township code identifier.
+        tests:
+          - not_null
+          - unique
+      - name: exposure
+        description: |
+          Composite exposure score (0-1) calculated as:
+          0.6 * population_norm + 0.4 * infra_norm
+          where both components are min-max normalized.
+        tests:
+          - not_null
+    meta:
+      materialization: view
+      depends_on:
+        - stg_population
+        - infra_with_township
+      calculation_method: weighted_normalization
+      weights:
+        population: 0.6
+        infrastructure: 0.4
+      note: Similar to exposure_score but joins directly without separate staging
+  - name: hazard
+    description: |
+      Intermediate model that calculates earthquake hazard scores for townships.
+      Aggregates earthquake characteristics (magnitude, depth, frequency) by township
+      and normalizes them using a weighted formula (50% magnitude, 30% depth inverse,
+      20% frequency) to produce a composite hazard score.
+    columns:
+      - name: township_code
+        description: Official township code identifier.
+        tests:
+          - not_null
+          - unique
+      - name: Hazard_score
+        description: |
+          Composite hazard score (0-1) calculated as:
+          0.5 * magnitude_norm + 0.3 * depth_norm + 0.2 * frequency_norm
+          
+          where:
+          - magnitude_norm: normalized average earthquake magnitude
+          - depth_norm: inverse normalized average depth (deeper = lower hazard)
+          - frequency_norm: normalized earthquake event count
+        tests:
+          - not_null
+    meta:
+      materialization: view
+      depends_on:
+        - stg_usgs_earthquakes
+        - earthquake_with_township
+      calculation_method: weighted_normalization
+      weights:
+        magnitude: 0.5
+        depth_inverse: 0.3
+        frequency: 0.2
+      note: Depth is inverted so deeper earthquakes contribute less to hazard
+  - name: infra_with_township
+    description: |
+      Intermediate model that enriches infrastructure data with township information.
+      Joins cleaned infrastructure records with township summary data to add township
+      codes and standardized names.
+    columns:
+      - name: infra_id
+        description: Unique identifier for the infrastructure asset.
+        tests:
+          - not_null
+      - name: latitude
+        description: Geographic latitude coordinate of the infrastructure location.
+        tests:
+          - not_null
+      - name: longitude
+        description: Geographic longitude coordinate of the infrastructure location.
+        tests:
+          - not_null
+      - name: township
+        description: Cleaned township name from the staging layer.
+        tests:
+          - not_null
+      - name: township_name
+        description: Standardized township name from the township summary reference.
+      - name: township_code
+        description: Official township code identifier from the township summary reference.
+    meta:
+      materialization: view
+      depends_on:
+        - stg_infra_township
+        - stg_township_summary
+      join_type: left
+  - name: vulnerability
+    description: |
+      Intermediate model that calculates vulnerability scores for townships based on
+      population density and infrastructure density. Combines normalized metrics using
+      a weighted formula (60% population density, 40% infrastructure density) to produce
+      a composite vulnerability score between 0 and 1.
+    columns:
+      - name: township_code
+        description: Official township code identifier.
+        tests:
+          - not_null
+          - unique
+      - name: pop_density
+        description: |
+          Normalized population density score (0-1) based on population per square
+          kilometer relative to min and max across all townships.
+        tests:
+          - not_null
+      - name: infra_density
+        description: |
+          Normalized infrastructure density score (0-1) based on count of critical
+          amenities (schools, universities, hospitals, clinics) per square kilometer
+          relative to min and max across all townships.
+      - name: vulnerability_score
+        description: |
+          Composite vulnerability score (0-1) calculated as:
+          0.6 * pop_density + 0.4 * infra_density
+        tests:
+          - not_null
+    meta:
+      materialization: view
+      depends_on:
+        - stg_population
+        - stg_township_summary
+        - stg_mm_infrastructure
+        - infra_with_township
+      calculation_method: weighted_normalization
+      weights:
+        population_density: 0.6
+        infrastructure_density: 0.4
+      amenities_included:
+        - school
+        - university
+        - hospital
+        - clinic

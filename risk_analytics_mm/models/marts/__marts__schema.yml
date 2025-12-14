@@ -1,0 +1,77 @@
+version: 2
+
+models:
+  - name: eri_score
+    description: |
+      Mart model that calculates the Earthquake Risk Index (ERI) for townships.
+      Combines hazard, exposure, and vulnerability scores using weighted formula
+      (40% hazard, 40% exposure, 20% vulnerability) and normalizes to 0-100 scale.
+      Includes risk level classifications from Minimal to Extreme.
+    columns:
+      - name: township_code
+        description: Official township code identifier.
+        tests:
+          - not_null
+          - unique
+      - name: township_name
+        description: Standardized township name.
+      - name: latitude
+        description: Geographic latitude coordinate of the township center.
+      - name: longitude
+        description: Geographic longitude coordinate of the township center.
+      - name: exposure_score
+        description: |
+          Exposure score (0-1) from the exposure_score model indicating population
+          and infrastructure concentration.
+        tests:
+          - not_null
+      - name: vulnerability_score
+        description: |
+          Vulnerability score (0-1) from the vulnerability model indicating population
+          and infrastructure density.
+        tests:
+          - not_null
+      - name: hazard_score
+        description: |
+          Hazard score (0-1) from the hazard model indicating earthquake magnitude,
+          depth, and frequency.
+        tests:
+          - not_null
+      - name: eri_score
+        description: |
+          Earthquake Risk Index score (0-100) calculated as:
+          0.4 * hazard_score + 0.4 * exposure_score + 0.2 * vulnerability_score
+          normalized to 0-100 scale.
+        tests:
+          - not_null
+      - name: risk_level
+        description: |
+          Categorical risk classification based on eri_score:
+          - Extreme: >= 80
+          - High: >= 60
+          - Moderate: >= 40
+          - Low: >= 20
+          - Minimal: < 20
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Extreme', 'High', 'Moderate', 'Low', 'Minimal']
+    meta:
+      materialization: table
+      depends_on:
+        - exposure_score
+        - vulnerability
+        - hazard
+        - stg_township_summary
+      calculation_method: weighted_normalization
+      weights:
+        hazard: 0.4
+        exposure: 0.4
+        vulnerability: 0.2
+      output_scale: 0-100
+      risk_classifications:
+        - Extreme (80-100)
+        - High (60-79)
+        - Moderate (40-59)
+        - Low (20-39)
+        - Minimal (0-19)

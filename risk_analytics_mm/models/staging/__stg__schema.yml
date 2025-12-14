@@ -1,0 +1,168 @@
+version: 2
+
+models:
+  - name: stg_earthquake_township
+    description: |
+      Staging model that cleans and standardizes township names for earthquake events.
+      Applies multiple transformation steps: removes common suffixes, special characters,
+      whitespace normalization, and standardizes township name spellings with case-insensitive
+      matching rules for common misspellings and variations.
+    columns:
+      - name: earthquake_id
+        description: Unique identifier linking to the earthquake event.
+        tests:
+          - not_null
+      - name: latitude
+        description: Geographic latitude coordinate of the earthquake location.
+        tests:
+          - not_null
+      - name: longitude
+        description: Geographic longitude coordinate of the earthquake location.
+        tests:
+          - not_null
+      - name: township
+        description: |
+          Cleaned and standardized township name. Raw values are processed through
+          multiple steps including suffix removal, character replacement, and
+          name normalization to handle spelling variations and common misspellings.
+        tests:
+          - not_null
+    meta:
+      source: risk_analytics_mm.earthquake_township
+      transformation_stages: 3
+      notes: Includes extensive township name normalization mapping
+
+  - name: stg_infra_township
+    description: |
+      Staging model that cleans and standardizes township names for infrastructure assets.
+      Applies multiple transformation steps: removes common suffixes, special characters,
+      whitespace normalization, and standardizes township name spellings with case-insensitive
+      matching rules for common misspellings and variations.
+    columns:
+      - name: infra_id
+        description: Unique identifier linking to the infrastructure asset.
+        tests:
+          - not_null
+      - name: latitude
+        description: Geographic latitude coordinate of the infrastructure location.
+        tests:
+          - not_null
+      - name: longitude
+        description: Geographic longitude coordinate of the infrastructure location.
+        tests:
+          - not_null
+      - name: township
+        description: |
+          Cleaned and standardized township name. Raw values are processed through
+          multiple steps including suffix removal, character replacement, and
+          name normalization to handle spelling variations and common misspellings.
+        tests:
+          - not_null
+    meta:
+      source: risk_analytics_mm.infrastructure_township
+      transformation_stages: 3
+      notes: Includes extensive township name normalization mapping
+
+  - name: stg_mm_infrastructure
+    description: |
+      Staging model for Myanmar infrastructure assets. Selects all columns from the
+      source table without transformation.
+    columns:
+      - name: infra_id
+        description: Unique identifier for the infrastructure asset.
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: Name or description of the infrastructure asset.
+      - name: type
+        description: Category or type of infrastructure (e.g., bridge, road, power plant).
+      - name: latitude
+        description: Geographic latitude coordinate of the asset location.
+      - name: longitude
+        description: Geographic longitude coordinate of the asset location.
+    meta:
+      source: risk_analytics_mm.mm_infrastructure
+      materialization: view
+  - name: stg_population
+    description: |
+      Staging model for population data by township. Standardizes and corrects
+      Township_ID codes through extensive mapping rules, handling spelling variations
+      and regional inconsistencies. Renames the township column for clarity.
+    columns:
+      - name: Township_ID
+        description: |
+          Standardized township identifier code (e.g., MMR013047). Raw values are
+          corrected through case-insensitive matching rules to handle spelling variations
+          and regional code mismatches.
+        tests:
+          - not_null
+      - name: Township_Name
+        description: Official township name.
+        tests:
+          - not_null
+      - name: Population
+        description: Population count for the township.
+        tests:
+          - not_null
+    meta:
+      source: risk_analytics_mm.population
+      notes: |
+        Includes extensive Township_ID mapping to standardize codes across regions.
+        Some townships have conditional logic based on state/region (SR) column.
+  - name: stg_township_summary
+    description: |
+      Staging model for township summary data. Cleans and standardizes township names
+      by removing special characters, whitespace, and converting to lowercase for
+      consistent joining with other township-based models.
+    columns:
+      - name: township_name
+        description: |
+          Cleaned and standardized township name in lowercase with special characters
+          and extra whitespace removed.
+        tests:
+          - not_null
+          - unique
+      - name: township_code
+        description: Official township code identifier.
+        tests:
+          - not_null
+      - name: latitude
+        description: Geographic latitude coordinate of the township center.
+        tests:
+          - not_null
+      - name: longitude
+        description: Geographic longitude coordinate of the township center.
+        tests:
+          - not_null
+      - name: area_km2
+        description: Total area of the township in square kilometers.
+        tests:
+          - not_null
+    meta:
+      source: risk_analytics_mm.township_summary_updated
+      materialization: view
+  - name: stg_usgs_earthquakes
+    description: |
+      Staging model for USGS earthquake feed. Selects and normalizes fields
+      from the `risk_analytics_mm.usgs_earthquakes` source and computes
+      `mm_timestamp` adjusted to the local offset.
+    columns:
+      - name: id
+        description: Unique identifier for the earthquake event from USGS.
+        tests:
+          - not_null
+          - unique
+      - name: magnitude
+        description: Reported earthquake magnitude.
+        tests:
+          - not_null
+      - name: depth_km
+        description: Depth of the earthquake in kilometers.
+      - name: mm_timestamp
+        description: Event timestamp converted from epoch milliseconds and adjusted by +6h30m.
+        tests:
+          - not_null
+    meta:
+      source: risk_analytics_mm.usgs_earthquakes
+      materialization: incremental
